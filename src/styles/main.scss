@@ -1,0 +1,91 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+
+  .col-first {
+    width: 350px;
+  }
+
+  .col-second {
+    width: 80px;
+  }
+
+  .col-other {
+    width: calc((100% - 430px) / 17);
+  }
+
+  &.sticky {
+    width: calc(100% - 15px);
+  }
+
+  thead {
+    height: 30px;
+    &.header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background-color: var(--header-bg-color);
+
+      td {
+        padding: 20px 12px;
+      }
+    }
+  }
+
+  tbody {
+    height: 60px;
+
+    td {
+      &:first-child {
+        width: 350px;
+      }
+      &:nth-child(2) {
+        width: 80px;
+      }
+      &.cursor-pointer {
+        cursor: pointer;
+      }
+
+      &.bg-yellow {
+        background-color: var(--yellow);
+      }
+    }
+  }
+
+  tr {
+    td,
+    th {
+      border: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+
+    td {
+      &:not(:first-child) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.cart-wrapper {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: var(--white);
+  width: 480px;
+  max-width: calc(100% - 32px);
+  padding: 20px;
+  border: 1px solid var(--black);
+
+  .cart-item {
+    width: 100%;
+    border-bottom: 1px solid var(--black);
+    display: inline-flex;
+    gap: 12px;
+    padding: 0 0 8px 0;
+    margin: 0 0 8px 0;
+  }
+}

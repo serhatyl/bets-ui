@@ -1,0 +1,27 @@
+@use '_reset.scss';
+@use '_variables.scss';
+@use '_grid.scss';
+@use 'main.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--oz-black);
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+
+#root,
+body {
+  width: 100%;
+}
+
+b {
+  font-weight: 700;
+}
