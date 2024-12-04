@@ -9,7 +9,7 @@
     "start": "webpack serve --mode development",
     "lint": "eslint --fix src/**/*.{ts,tsx} --no-cache",
     "pretty": "prettier --write src/**/*.{ts,tsx,js,css}",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [
     "react",

@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path');
 
 const port = process.env.PORT || 3000;
 dotenv.config();
@@ -11,7 +12,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.[fullhash].js',
-    publicPath: '/',
+    path: path.resolve(__dirname, 'build'),
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -37,8 +38,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      inject: 'body',
+      template: path.join(__dirname, 'public', 'index.html'),
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
